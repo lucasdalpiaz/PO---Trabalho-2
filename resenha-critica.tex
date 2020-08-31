@@ -1,0 +1,192 @@
+\documentclass[a4paper,oneside]{article}
+
+
+\pagestyle{myheadings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pacotes para acentua��o %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{cite}
+%\usepackage{natbib}     %% note the absence of options
+% Change how references are included (see the natbib package).
+%\setcitestyle{square,numbers,authoryear}
+%\setcitestyle{authoryear}
+\usepackage[alf]{abntex2cite}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ae}
+\usepackage{booktabs}
+%\usepackage[ansinew]{inputenc}
+\usepackage{graphicx}
+
+\usepackage[brazilian]{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{algpseudocode,algorithm}
+% Declaracoes em Português
+\algrenewcommand\algorithmicend{\textbf{fim}}
+\algrenewcommand\algorithmicdo{\textbf{faça}}
+\algrenewcommand\algorithmicwhile{\textbf{enquanto}}
+\algrenewcommand\algorithmicfor{\textbf{para}}
+\algrenewcommand\algorithmicif{\textbf{se}}
+\algrenewcommand\algorithmicthen{\textbf{então}}
+\algrenewcommand\algorithmicelse{\textbf{senão}}
+\algrenewcommand\algorithmicreturn{\textbf{devolve}}
+\algrenewcommand\algorithmicfunction{\textbf{função}}
+
+% Rearranja os finais de cada estrutura
+\algrenewtext{EndWhile}{\algorithmicend\ \algorithmicwhile}
+\algrenewtext{EndFor}{\algorithmicend\ \algorithmicfor}
+\algrenewtext{EndIf}{\algorithmicend\ \algorithmicif}
+\algrenewtext{EndFunction}{\algorithmicend\ \algorithmicfunction}
+
+% O comando For, a seguir, retorna 'para #1 -- #2 até #3 faça'
+\algnewcommand\algorithmicto{\textbf{até}}
+\algrenewtext{For}[3]%
+{\algorithmicfor\ #1 $\gets$ #2 \algorithmicto\ #3 \algorithmicdo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{nomencl}
+\makenomenclature
+\renewcommand{\nomname}{Lista de Símbolos}
+
+
+\linespread{1.5} % espa�amento entre linhas
+
+
+
+% horizontal
+\setlength{\hoffset}{-1in}
+
+\setlength{\oddsidemargin}{3.0cm} 
+
+\setlength{\textwidth}{160mm} % (210mm - 30mm - 20mm)
+
+\setlength{\parindent}{1.25cm} % identa��o de cada par�grafo
+
+% vertical
+\setlength{\voffset}{-1in}
+\addtolength{\voffset}{2.0cm}
+
+\setlength{\topmargin}{0.0cm}
+
+\setlength{\headheight}{5mm}
+\setlength{\headsep}{5mm}
+
+\setlength{\textheight}{247mm} % (297mm - 30mm - 20mm)
+
+
+
+\title{Atividade 1}
+
+\author{\\
+\\
+
+Universidade Federal Fluminense\\
+
+
+
+} 
+
+
+\begin{document}
+
+
+\pagenumbering{arabic}
+
+\begin{titlepage}
+  \begin{center}
+\Large{\textsc{Universidade Federal Fluminense} \\
+  %         \textsc{Pólo Universitário de Rio das Ostras} \\ 
+           \textsc{Mestrado de Engenharia de Produção e Sistemas Computacionais}
+          }
+    \par\vfill
+    \LARGE{Lucas Campos Dal Piaz de Souza\\Arthur Neves Fraga Serejo}
+    \par\vfill
+%    \bigskip
+    \LARGE{Modelagem de Sistemas de Software}\\
+    \LARGE{Trabalho Final}
+    \par\vfill
+    \Large{Rio das Ostras-RJ\\Agosto, 2020.}
+  \end{center}
+\end{titlepage}
+\newpage
+\tableofcontents
+\newpage
+%\citeonline{nome_referenciado no refs}  \cite{nome_referenciado no refs}
+
+
+%\thispagestyle{empty} 
+
+
+
+%PENSEI EM UM PROBLEMA DAQUELES DO TIPO MIX DE PRODUÇÃO AO INVÉS DE UM PROBLEMA DE TRANSPORTE, ACHO QUE FEZ MAIS SENTIDO.
+
+
+\section {Estudo de caso I}
+\subsection{Questão 1}
+$x_{ij}$: Quantidade a ser produzida do conjunto i com o recurso j. $\forall$ i $\in$ \{1 - Alfa, 2 - Beta, 3 - Gama\}. $\forall$ j $\in$  \{1 - Corte, 2 - Preparação, 3 - Montagem, 4 - Pintura, 5 - Embalagem, 6 - Pintura\}.\\
+$R_j$: Custos unitários dos recursos j.
+\\
+$C_i$: Contribuições Marginais dos Conjuntos i.
+\\
+$P_{ij}$: Matriz de utilização unitária de recursos j para fabricação dos conjuntos i.
+\\
+$A_i$: Alocação Inicial de recurso por seção.
+\\
+O objetivo maximizar a produção mensal:
+\begin{equation}
+  MAX Z =  \sum_{i} \sum_{j}  (C_{i}x_{ij}) - \sum_{j} \sum_{i}  (R_{i}x_{ij})
+\end{equation}
+S.a.:
+\begin{equation}
+    \sum_{j}(\sum_{i} ( P_{ij}x_{i}) \leq  A_{j} )
+\end{equation}
+%\begin{equation}
+%     \sum_{j} (\sum_{i}x_{i} \geq R_{j})
+%\end{equation}
+
+\subsection{Questão 2}
+\subsection{Questão 3}
+\subsection{Questão 4}
+
+\begin{equation}
+    \sum_{i} ( \sum_{j}  44(P_{ij}x_{ij}) \leq  A_i)
+\end{equation}
+\subsection{Questão 3}
+\section {Estudo de caso II}
+
+\subsection{Caso 1}
+Estudo de caso para o mercado atual:\\
+$x_{ij}$: Quantidade a ser transportada da origem i para o destino j. $\forall$ i $\in$ \{1 - Porto Alegre, 2 - Belo Horizonte, 3 - Salvador\}. $\forall$ j $\in$  \{1 - Curitiba, 2 - Recife, 3 - São Paulo, 4 - Rio de Janeiro, 5 - Brasília\}.
+\\
+$D_j$: Demanda dos destinos j.
+\\
+$C_{ij}$: Custos unitários de transporte.
+\\
+$O_i$: Disponibilidade das origens i.
+\\
+O objetivo minimizar os custos de transporte entre as origens e destino:
+\begin{equation}
+  MIN Z =  \sum_{i}\sum_{j} (C_{ij}x_{ij})
+\end{equation}
+S.a.:
+\begin{equation}
+    \sum_{i}(\sum_{j} x_{ij}) \leq  O_{i} )
+\end{equation}
+\begin{equation}
+      \sum_{j} (\sum_{i}x_{ij} \geq D_{j})
+\end{equation}
+O custo total é de 107800.
+\subsection{Caso 2}
+Estudo de caso para o mercado futuro com aumento de demanda:
+\begin{itemize}
+\item{Opção A}\\
+O custo total é de 173200.
+\item{Opção B}\\
+O custo total é de 162200.
+\end{itemize}
+A melhor opção para planejamento do futuro da empresa é a B, pois o custo é menor.
+\end{document}
